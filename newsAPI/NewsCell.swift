@@ -1,5 +1,5 @@
 //
-//  TableViewCell.swift
+//  NewsCell.swift
 //  newsAPI
 //
 //  Created by Артур Басыров on 16.10.2022.
@@ -7,8 +7,16 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
-
+class NewsCell: UITableViewCell {
+    
+    @IBOutlet weak var imageIcon: UIImageView!
+    
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

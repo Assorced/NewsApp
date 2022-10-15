@@ -6,13 +6,37 @@
 //
 
 import UIKit
+import SafariServices
 
 class OneNewsViewController: UIViewController {
 
+    var article: Article!
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
+    @IBAction func pushOpenAction(_ sender: Any) {
+        let svc = SFSafariViewController(url: URL(string: article.url)!)
+        present(svc, animated: true, completion: nil)
+    }
+    
+    @IBOutlet weak var labelTitle: UILabel!
+    
+    @IBOutlet weak var labelDiscription: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        labelTitle.text = article.title
+        labelDiscription.text = article.description
+        
+        DispatchQueue.main.async {
+            if let url = URL(string: self.article.urlToImage) {
+                if let data = try? Data(contentsOf: url) {
+                    self.imageView.image = UIImage(data: data)
+                }
+                
+            }
+        }
     }
     
 
