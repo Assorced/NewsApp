@@ -10,6 +10,7 @@ import UIKit
 class TableViewController: UITableViewController {
 
     override func viewDidLoad() {
+        print("test git")
         super.viewDidLoad()
         loadNews {
             DispatchQueue.main.async {
