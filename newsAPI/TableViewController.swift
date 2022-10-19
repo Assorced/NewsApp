@@ -10,14 +10,25 @@ import UIKit
 class TableViewController: UITableViewController {
 
     override func viewDidLoad() {
-        print("test git")
         super.viewDidLoad()
+        
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        
+        self.registerTableViewCells()
+        
         loadNews {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
     }
+    
+    private func registerTableViewCells() {
+        let titleLabelCell = UINib(nibName: "NewsCell", bundle: nil)
+        self.tableView.register(titleLabelCell, forCellReuseIdentifier: "NewsCell")
+    }
+    
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -30,13 +41,13 @@ class TableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        
-        let article = articles[indexPath.row]
-        cell.textLabel?.text = article.title
-        cell.detailTextLabel?.text = article.publishedAt
-        
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell") as? NewsCell {
+            let article = articles[indexPath.row]
+            cell.textLabel?.text = article.title
+            cell.detailTextLabel?.text = article.publishedAt
+            return cell
+            }
+        return UITableViewCell()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
