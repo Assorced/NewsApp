@@ -26,4 +26,5 @@ struct Article {
         
         sourceName = (dictionary["source"] as? Dictionary<String, Any> ?? ["":""])["name"] as? String ?? ""
     }
+    
 }

@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import Foundation
 
 class TableViewController: UITableViewController {
+    
+    var article: Article!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +27,8 @@ class TableViewController: UITableViewController {
             }
         }
     }
+    
+    
     
     private func registerTableViewCells() {
         let titleLabelCell = UINib(nibName: "NewsCell", bundle: nil)
@@ -43,8 +49,17 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell") as? NewsCell {
             let article = articles[indexPath.row]
-            cell.textLabel?.text = article.title
-            cell.detailTextLabel?.text = article.publishedAt
+            
+            DispatchQueue.main.async {
+                if let url = URL(string: article.urlToImage) {
+                    if let data = try? Data(contentsOf: url) {
+                        cell.imageIcon.image = UIImage(data: data)
+                    }
+                }
+            }
+            
+            cell.titleLabel.text = article.title
+            cell.descriptionLabel.text = article.publishedAt
             return cell
             }
         return UITableViewCell()

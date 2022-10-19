@@ -17,9 +17,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u85-DQ-Fcx">
-                        <rect key="frame" x="10" y="14" width="91" height="91"/>
+                        <rect key="frame" x="10" y="5" width="91" height="80"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="91" id="l95-bP-afk"/>
+                            <constraint firstAttribute="height" constant="80" id="l95-bP-afk"/>
                             <constraint firstAttribute="width" constant="91" id="zE9-hn-7jc"/>
                         </constraints>
                     </imageView>
@@ -41,7 +41,7 @@
                     <constraint firstItem="V04-wD-zZx" firstAttribute="top" secondItem="gWt-zW-hkt" secondAttribute="bottom" constant="14" id="6Ud-ud-4t5"/>
                     <constraint firstItem="V04-wD-zZx" firstAttribute="top" secondItem="gWt-zW-hkt" secondAttribute="bottom" constant="18" id="7mT-yj-Fud"/>
                     <constraint firstAttribute="bottom" secondItem="u85-DQ-Fcx" secondAttribute="bottom" constant="6" id="GNv-a8-dcB"/>
-                    <constraint firstItem="u85-DQ-Fcx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="JPG-eR-PFc"/>
+                    <constraint firstItem="u85-DQ-Fcx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="JPG-eR-PFc"/>
                     <constraint firstAttribute="trailing" secondItem="gWt-zW-hkt" secondAttribute="trailing" constant="14" id="SAl-Bb-tcu"/>
                     <constraint firstItem="gWt-zW-hkt" firstAttribute="leading" secondItem="u85-DQ-Fcx" secondAttribute="trailing" constant="14" id="ZuE-qx-faH"/>
                     <constraint firstItem="u85-DQ-Fcx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="bHT-9i-KMl"/>
