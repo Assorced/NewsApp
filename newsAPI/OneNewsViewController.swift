@@ -25,8 +25,13 @@ class OneNewsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        labelTitle.lineBreakMode = NSLineBreakMode.byWordWrapping
+        labelTitle.numberOfLines = 0
         labelTitle.text = article.title
+        
+        labelDiscription.lineBreakMode = NSLineBreakMode.byWordWrapping
+        labelDiscription.numberOfLines = 0
         labelDiscription.text = article.description
         
         DispatchQueue.main.async {

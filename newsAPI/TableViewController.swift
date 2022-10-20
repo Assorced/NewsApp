@@ -57,7 +57,7 @@ class TableViewController: UITableViewController {
                     }
                 }
             }
-            
+    
             cell.titleLabel.text = article.title
             cell.descriptionLabel.text = article.publishedAt
             return cell

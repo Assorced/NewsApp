@@ -19,12 +19,14 @@ class NewsCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        titleLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        titleLabel.numberOfLines = 0
+        titleLabel.text = "длинный текст"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
