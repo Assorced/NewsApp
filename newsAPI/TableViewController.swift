@@ -50,13 +50,17 @@ class TableViewController: UITableViewController {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell") as? NewsCell {
             let article = articles[indexPath.row]
             
-            DispatchQueue.main.async {
-                if let url = URL(string: article.urlToImage) {
+            let queue = DispatchQueue.global()
+            queue.async {
+                if let url = URL(string: self.article.urlToImage) {
                     if let data = try? Data(contentsOf: url) {
-                        cell.imageIcon.image = UIImage(data: data)
+                        DispatchQueue.main.async {
+                            cell.imageIcon.image = UIImage(data: data)
+                        }
                     }
                 }
             }
+
     
             cell.titleLabel.text = article.title
             cell.descriptionLabel.text = article.publishedAt

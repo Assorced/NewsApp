@@ -39,7 +39,7 @@ class OneNewsViewController: UIViewController {
                 if let data = try? Data(contentsOf: url) {
                     self.imageView.image = UIImage(data: data)
                 }
-                
+
             }
         }
     }
