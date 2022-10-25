@@ -52,7 +52,7 @@ class TableViewController: UITableViewController {
             
             let queue = DispatchQueue.global()
             queue.async {
-                if let url = URL(string: self.article.urlToImage) {
+                if let url = URL(string: article.urlToImage) {
                     if let data = try? Data(contentsOf: url) {
                         DispatchQueue.main.async {
                             cell.imageIcon.image = UIImage(data: data)

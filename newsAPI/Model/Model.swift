@@ -16,7 +16,7 @@ var urlToData: URL {
 }
 
 func loadNews(completionHandler: (()-> Void)?) {
-    let url = URL(string: "https://newsapi.org/v2/everything?q=tesla&from=2022-08-16&sortBy=publishedAt&apiKey=41b8ae5912864d199f520c6168679032")
+    let url = URL(string: "https://newsapi.org/v2/everything?q=tesla&from=2022-10-16&sortBy=publishedAt&apiKey=41b8ae5912864d199f520c6168679032")
     let session = URLSession(configuration: .default)
     let downloadTask = session.downloadTask(with: url!) { (urlFile, responce, error) in
         if urlFile != nil {
